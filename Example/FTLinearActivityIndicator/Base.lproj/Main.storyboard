@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="FTLinearActivityIndicator_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goq-N5-EcT">
+                                <rect key="frame" x="16" y="273.5" width="343" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AL9-kp-yGM">
+                                        <rect key="frame" x="60" y="0.0" width="223" height="30"/>
+                                        <state key="normal" title="Toggle network activity indicator"/>
+                                        <connections>
+                                            <action selector="toggle:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7vV-3j-Hr1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQn-vt-jbK">
+                                        <rect key="frame" x="50" y="50" width="243" height="30"/>
+                                        <state key="normal" title="Toggle standalone activity indicator"/>
+                                        <connections>
+                                            <action selector="toggleStandAlone:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bjA-Eh-qPn"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FlV-j3-3FU" customClass="FTLinearActivityIndicator" customModule="FTLinearActivityIndicator">
+                                        <rect key="frame" x="131" y="104" width="80" height="10"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="LgS-gM-GtG"/>
+                                            <constraint firstAttribute="width" constant="80" id="rxx-t7-Eyy"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="AL9-kp-yGM" firstAttribute="top" secondItem="goq-N5-EcT" secondAttribute="top" id="0AK-a5-MXJ"/>
+                                    <constraint firstItem="FlV-j3-3FU" firstAttribute="centerX" secondItem="goq-N5-EcT" secondAttribute="centerX" id="0rF-Gj-cmu"/>
+                                    <constraint firstItem="nQn-vt-jbK" firstAttribute="centerX" secondItem="goq-N5-EcT" secondAttribute="centerX" id="6Re-Mf-m3J"/>
+                                    <constraint firstItem="nQn-vt-jbK" firstAttribute="top" secondItem="AL9-kp-yGM" secondAttribute="bottom" constant="20" id="KXp-6d-9x3"/>
+                                    <constraint firstAttribute="bottom" secondItem="FlV-j3-3FU" secondAttribute="bottom" constant="6" id="LZG-XQ-MOu"/>
+                                    <constraint firstItem="AL9-kp-yGM" firstAttribute="centerX" secondItem="goq-N5-EcT" secondAttribute="centerX" id="V7O-B6-zgg"/>
+                                    <constraint firstAttribute="height" constant="120" id="Yfr-DT-2zj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="goq-N5-EcT" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="EfR-mE-saI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="goq-N5-EcT" secondAttribute="trailing" id="MnY-ew-fRw"/>
+                            <constraint firstItem="goq-N5-EcT" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="ZdA-f8-U27"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="standAloneIndicator" destination="FlV-j3-3FU" id="sHF-TN-0Wg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="32.833583208395808"/>
+        </scene>
+    </scenes>
+</document>
