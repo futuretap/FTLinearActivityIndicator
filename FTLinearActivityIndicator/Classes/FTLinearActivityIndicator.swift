@@ -50,6 +50,7 @@ import UIKit
 		leftAnimation.toValue = self.bounds.size.width
 		leftAnimation.duration = duration
 		leftAnimation.repeatCount = Float.infinity
+		leftAnimation.isRemovedOnCompletion = false // continue running after app was in background
 		leftGradientLayer.add(leftAnimation, forKey: "leftAnimation")
 
 		rightGradientLayer.colors = [clear.cgColor, color.cgColor]
@@ -65,6 +66,7 @@ import UIKit
 		rightAnimation.duration = duration
 		rightAnimation.timeOffset = 0.5 * duration
 		rightAnimation.repeatCount = Float.infinity
+		rightAnimation.isRemovedOnCompletion = false
 		rightGradientLayer.add(rightAnimation, forKey: "rightAnimation")
 
 		setNeedsLayout()
