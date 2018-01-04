@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FTLinearActivityIndicator'
-  s.version          = '1.0'
+  s.version          = '1.0.1'
   s.summary          = 'Add the missing network activity indicator on iPhone X'
 
   s.description      = <<-DESC
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
 
   s.homepage         = 'https://github.com/futuretap/FTLinearActivityIndicator'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = { :type => 'CC-BY-SA 4.0', :file => 'LICENSE' }
   s.author           = 'Ortwin Gentz'
   s.source           = { :git => 'https://github.com/futuretap/FTLinearActivityIndicator.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/ortwingentz'
