@@ -1,9 +1,9 @@
 # FTLinearActivityIndicator
 
-[![CI Status](http://img.shields.io/travis/futuretap/FTLinearActivityIndicator.svg?style=flat)](https://travis-ci.org/futuretap/FTLinearActivityIndicator)
 [![Version](https://img.shields.io/cocoapods/v/FTLinearActivityIndicator.svg?style=flat)](http://cocoapods.org/pods/FTLinearActivityIndicator)
-[![License](https://img.shields.io/cocoapods/l/FTLinearActivityIndicator.svg?style=flat)](http://cocoapods.org/pods/FTLinearActivityIndicator)
+[![License](https://img.shields.io/cocoapods/l/FTLinearActivityIndicator.svg?style=flat)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![Platform](https://img.shields.io/cocoapods/p/FTLinearActivityIndicator.svg?style=flat)](http://cocoapods.org/pods/FTLinearActivityIndicator)
+[![Twitter](https://img.shields.io/twitter/follow/ortwingentz.svg?style=social&label=Follow)](https://twitter.com/ortwingentz)
 
 iPhone X does not display the network activity indicator anymore. This framework brings it
 back by placing an activity indicator in the upper right of the screen on top of the
@@ -35,7 +35,7 @@ Include a `FTLinearActivityIndicator` view in your storyboard or instantiate it 
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To open an example project, just call `pod try FTLinearActivityIndicator` on the command line.
 
 ## Requirements
 Written in Swift 4. Should run under any iOS (obviously, the iPhone X requires iOS 11 or higher).
@@ -50,12 +50,8 @@ pod 'FTLinearActivityIndicator'
 
 ## Author
 
-Ortwin Gentz, [FutureTap GmbH](https://www.futuretap.com)
-
-Twitter: [@ortwingentz](https://twitter.com/ortwingentz)
+Ortwin Gentz, [FutureTap GmbH](https://www.futuretap.com), Twitter: [@ortwingentz](https://twitter.com/ortwingentz)
 
 ## License
 
-FTLinearActivityIndicator is available under the CC-BY-SA 4.0 license. You may copy and redistribute, adapt and build upon the framework for any purpose, even commercially, as long as you give credit to me in the About menu or a similar place in the app.
-
-See the LICENSE file for more info.
+FTLinearActivityIndicator is available under the [CC-BY-SA 4.0 license](http://creativecommons.org/licenses/by-sa/4.0/). You may copy and redistribute, adapt and build upon the framework for any purpose, even commercially, as long as you give credit to me in the About menu or a similar place in the app.
