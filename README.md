@@ -6,25 +6,23 @@
 [![Platform](https://img.shields.io/cocoapods/p/FTLinearActivityIndicator.svg?style=flat)](http://cocoapods.org/pods/FTLinearActivityIndicator)
 
 iPhone X does not display the network activity indicator anymore. This framework brings it
-back by placing an activity indicator in the upper left of the screen on top of the
+back by placing an activity indicator in the upper right of the screen on top of the
 regular status bar items.
 
-Since a circular indicator wouldn't fit, a rectangular 
-[KITT scanner](https://giphy.com/gifs/scanner-vD9c1fVxaYZnq)-like indicator with a gradient is shown. The indicator UI can be used standalone or as a "fix" for the iOS network activity indicator (using the
-existing API).
+Since a circular indicator wouldn't fit, a rectangular [KITT scanner](https://giphy.com/gifs/scanner-vD9c1fVxaYZnq)-like indicator with a gradient is shown. The indicator UI can be used standalone or as a "fix" for the iOS network activity indicator (using the existing API).
 
 <img src="screenshot.gif">
 
 ## Integration
-### Use as a fix for the system network activity indicator
+### As a fix for the system network activity indicator
 
-In your app delegate's didFinishLaunching method, just call
+In your app delegate's `didFinishLaunching` method, just call
 
     UIApplication.configureLinearNetworkActivityIndicatorIfNeeded()
 
-Then, use the standard network activity indicator just as you're used to.
+Then, use the standard network activity indicator as usual.
 
-### Use as a standalone view
+### As a standalone view
 
 Include a `FTLinearActivityIndicator` view in your storyboard or instantiate it from code. The class supports the following methods and properties, using a similar API as the iOS `UIActivityIndicatorView`:
 
@@ -40,12 +38,11 @@ Include a `FTLinearActivityIndicator` view in your storyboard or instantiate it 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
-Written in Swift 4.0. Should run under any iOS (obviously, the iPhone X requires iOS 11 or higher).
+Written in Swift 4. Should run under any iOS (obviously, the iPhone X requires iOS 11 or higher).
 
 ## Installation
 
-FTLinearActivityIndicator is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+FTLinearActivityIndicator is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'FTLinearActivityIndicator'
