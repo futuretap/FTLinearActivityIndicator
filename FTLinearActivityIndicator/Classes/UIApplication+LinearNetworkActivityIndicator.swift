@@ -59,7 +59,7 @@ extension UIApplication {
 				indicatorWindow = UIWindow(frame: statusBarFrame)
 				indicatorWindow?.windowLevel = UIWindowLevelStatusBar + 1
 				
-				let indicator = FTLinearActivityIndicator(frame: CGRect(x: indicatorWindow!.frame.width - 74, y: 5, width: 44, height: 6))
+				let indicator = FTLinearActivityIndicator(frame: CGRect(x: indicatorWindow!.frame.width - 74, y: 6, width: 44, height: 4))
 				indicator.tintColor = statusBarStyle == .default ? UIColor.black : UIColor.white
 				indicator.hidesWhenStopped = false
 				indicator.startAnimating()
