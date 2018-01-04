@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIApplication {
-	final public class func configureLinearNetworkActivityIndicatorIfNeeded() {
+	@objc final public class func configureLinearNetworkActivityIndicatorIfNeeded() {
 		if #available(iOS 11.0, *) {
 			// detect iPhone X
 			if let window = shared.windows.first, window.safeAreaInsets.top > 0.0 {

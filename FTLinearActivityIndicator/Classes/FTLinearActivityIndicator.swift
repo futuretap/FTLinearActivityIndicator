@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class FTLinearActivityIndicator: UIView {
+@objc public class FTLinearActivityIndicator: UIView {
 
-	public var hidesWhenStopped = true
+	@objc public var hidesWhenStopped = true
 	
 	let duration = 1.0
 	let leftGradientLayer = CAGradientLayer()
@@ -32,7 +32,7 @@ public class FTLinearActivityIndicator: UIView {
 		layer.addSublayer(rightGradientLayer)
 	}
 	
-	public func startAnimating() {
+	@objc public func startAnimating() {
 		animating = true
 
 		let color = tintColor.withAlphaComponent(0.7)
@@ -71,7 +71,7 @@ public class FTLinearActivityIndicator: UIView {
 		layoutIfNeeded()
 	}
 	
-	public func stopAnimating() {
+	@objc public func stopAnimating() {
 		animating = false
 		leftGradientLayer.removeAllAnimations()
 		rightGradientLayer.removeAllAnimations()
@@ -79,7 +79,7 @@ public class FTLinearActivityIndicator: UIView {
 		layoutIfNeeded()
 	}
 	
-	public var isAnimating: Bool {
+	@objc public var isAnimating: Bool {
 		get {
 			return animating
 		}
