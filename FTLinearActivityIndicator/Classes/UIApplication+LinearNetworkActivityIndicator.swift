@@ -61,15 +61,25 @@ extension UIApplication {
 				
 				let indicator = FTLinearActivityIndicator(frame: CGRect(x: indicatorWindow!.frame.width - 74, y: 5, width: 44, height: 6))
 				indicator.tintColor = statusBarStyle == .default ? UIColor.black : UIColor.white
+				indicator.hidesWhenStopped = false
+				indicator.startAnimating()
 				indicatorWindow?.addSubview(indicator)
 			}
 		}
-		indicatorWindow?.isHidden = !visible
 		guard let indicator = indicatorWindow?.subviews.first as? FTLinearActivityIndicator else {return}
 		if visible {
-			indicator.startAnimating()
+			indicatorWindow?.isHidden = false
+			indicator.isHidden = false
+			indicator.alpha = 1
 		} else {
-			indicator.stopAnimating()
+			UIView.animate(withDuration: 0.5, animations: {
+				indicator.alpha = 0
+			}) { (finished) in
+				if (finished) {
+					indicator.isHidden = !self.isNetworkActivityIndicatorVisible // might have changed in the meantime
+					self.indicatorWindow?.isHidden = !self.isNetworkActivityIndicatorVisible
+				}
+			}
 		}
 	}
 }
