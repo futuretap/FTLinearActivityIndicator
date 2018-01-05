@@ -5,7 +5,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/FTLinearActivityIndicator.svg?style=flat)](http://cocoapods.org/pods/FTLinearActivityIndicator)
 [![Twitter](https://img.shields.io/twitter/follow/ortwingentz.svg?style=social&label=Follow)](https://twitter.com/ortwingentz)
 
-iPhone X does not display the network activity indicator anymore. This framework brings it
+iPhone X does not display the network activity indicator [anymore](http://www.futuretap.com/blog/fix-for-the-missing-network-activity-indicator-on-iphone-x). This framework brings it
 back by placing an activity indicator in the upper right of the screen on top of the
 regular status bar items.
 
