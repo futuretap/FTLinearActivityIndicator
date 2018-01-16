@@ -22,11 +22,11 @@ extension UIApplication {
 		DispatchQueue.once {
 			let originalSelector = #selector(setter: UIApplication.isNetworkActivityIndicatorVisible)
 			let swizzledSelector = #selector(ft_setNetworkActivityIndicatorVisible(visible:))
-			
 			let originalMethod = class_getInstanceMethod(self, originalSelector)
 			let swizzledMethod = class_getInstanceMethod(self, swizzledSelector)
 			method_exchangeImplementations(originalMethod!, swizzledMethod!)
 		}
+		UIViewController.configureLinearNetworkActivityIndicator()
 	}
 	
 	private struct AssociatedKeys {
@@ -68,7 +68,7 @@ extension UIApplication {
 		}
 		guard let indicator = indicatorWindow?.subviews.first as? FTLinearActivityIndicator else {return}
 		if visible {
-			indicatorWindow?.isHidden = false
+			indicatorWindow?.isHidden = self.isStatusBarHidden
 			indicator.isHidden = false
 			indicator.alpha = 1
 		} else {
@@ -76,12 +76,34 @@ extension UIApplication {
 				indicator.alpha = 0
 			}) { (finished) in
 				if (finished) {
-					indicator.isHidden = !self.isNetworkActivityIndicatorVisible // might have changed in the meantime
-					self.indicatorWindow?.isHidden = !self.isNetworkActivityIndicatorVisible
+					indicator.isHidden = !self.isNetworkActivityIndicatorVisible  // might have changed in the meantime
+					self.indicatorWindow?.isHidden = !self.isNetworkActivityIndicatorVisible || self.isStatusBarHidden
 				}
 			}
 		}
 	}
+	
+	func ftUpdateNetworkActivityIndicatorAppearance() {
+		self.indicatorWindow?.isHidden = !self.isNetworkActivityIndicatorVisible || self.isStatusBarHidden
+	}
+}
+
+extension UIViewController {
+	@objc final public class func configureLinearNetworkActivityIndicator() {
+		DispatchQueue.once {
+			let originalSelector = #selector(setNeedsStatusBarAppearanceUpdate)
+			let swizzledSelector = #selector(ftSetNeedsStatusBarAppearanceUpdate)
+			let originalMethod = class_getInstanceMethod(self, originalSelector)
+			let swizzledMethod = class_getInstanceMethod(self, swizzledSelector)
+			method_exchangeImplementations(originalMethod!, swizzledMethod!)
+		}
+	}
+	
+	@objc func ftSetNeedsStatusBarAppearanceUpdate() {
+		self.ftSetNeedsStatusBarAppearanceUpdate()
+		UIApplication.shared.ftUpdateNetworkActivityIndicatorAppearance()
+	}
+
 }
 
 // https://stackoverflow.com/a/39983813/235297

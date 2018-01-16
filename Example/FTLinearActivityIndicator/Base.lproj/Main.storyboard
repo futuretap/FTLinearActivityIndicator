@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goq-N5-EcT">
-                                <rect key="frame" x="16" y="273.5" width="343" height="120"/>
+                                <rect key="frame" x="16" y="244" width="343" height="180"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AL9-kp-yGM">
                                         <rect key="frame" x="60" y="0.0" width="223" height="30"/>
@@ -40,23 +40,32 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FlV-j3-3FU" customClass="FTLinearActivityIndicator" customModule="FTLinearActivityIndicator">
-                                        <rect key="frame" x="131" y="104" width="80" height="10"/>
+                                        <rect key="frame" x="131" y="164" width="80" height="10"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="LgS-gM-GtG"/>
                                             <constraint firstAttribute="width" constant="80" id="rxx-t7-Eyy"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHq-XK-I1T">
+                                        <rect key="frame" x="112" y="101" width="119" height="30"/>
+                                        <state key="normal" title="Toggle status bar"/>
+                                        <connections>
+                                            <action selector="toggleStatusBarWith_sender:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="c1a-25-9EA"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="AL9-kp-yGM" firstAttribute="top" secondItem="goq-N5-EcT" secondAttribute="top" id="0AK-a5-MXJ"/>
                                     <constraint firstItem="FlV-j3-3FU" firstAttribute="centerX" secondItem="goq-N5-EcT" secondAttribute="centerX" id="0rF-Gj-cmu"/>
                                     <constraint firstItem="nQn-vt-jbK" firstAttribute="centerX" secondItem="goq-N5-EcT" secondAttribute="centerX" id="6Re-Mf-m3J"/>
+                                    <constraint firstItem="hHq-XK-I1T" firstAttribute="top" secondItem="nQn-vt-jbK" secondAttribute="bottom" constant="21" id="GRw-0S-WKZ"/>
+                                    <constraint firstItem="hHq-XK-I1T" firstAttribute="centerX" secondItem="goq-N5-EcT" secondAttribute="centerX" id="Hkr-My-AP1"/>
                                     <constraint firstItem="nQn-vt-jbK" firstAttribute="top" secondItem="AL9-kp-yGM" secondAttribute="bottom" constant="20" id="KXp-6d-9x3"/>
                                     <constraint firstAttribute="bottom" secondItem="FlV-j3-3FU" secondAttribute="bottom" constant="6" id="LZG-XQ-MOu"/>
                                     <constraint firstItem="AL9-kp-yGM" firstAttribute="centerX" secondItem="goq-N5-EcT" secondAttribute="centerX" id="V7O-B6-zgg"/>
-                                    <constraint firstAttribute="height" constant="120" id="Yfr-DT-2zj"/>
+                                    <constraint firstAttribute="height" constant="180" id="Yfr-DT-2zj"/>
                                 </constraints>
                             </view>
                         </subviews>

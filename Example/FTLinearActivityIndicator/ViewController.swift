@@ -12,6 +12,8 @@ import FTLinearActivityIndicator
 class ViewController: UIViewController {
 	@IBOutlet var standAloneIndicator: FTLinearActivityIndicator?
 	
+	var statusBarHidden = false
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -33,6 +35,17 @@ class ViewController: UIViewController {
 			standAloneIndicator.stopAnimating()
 		} else {
 			standAloneIndicator.startAnimating()
+		}
+	}
+	
+	@IBAction func toggleStatusBar(_sender: Any) {
+		statusBarHidden = !statusBarHidden
+		setNeedsStatusBarAppearanceUpdate()
+	}
+	
+	override var prefersStatusBarHidden: Bool {
+		get {
+			return statusBarHidden
 		}
 	}
 }
