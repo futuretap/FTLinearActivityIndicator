@@ -88,4 +88,14 @@ import UIKit
 			return animating
 		}
 	}
+	
+	override public func tintColorDidChange() {
+		super.tintColorDidChange()
+		if isAnimating {
+			startAnimating()
+		} else {
+			startAnimating()
+			stopAnimating()
+		}
+	}
 }
