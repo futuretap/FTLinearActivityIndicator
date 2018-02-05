@@ -16,7 +16,7 @@ Since a circular indicator wouldn't fit, a rectangular [KITT scanner](https://gi
 ## Integration
 ### As a fix for the system network activity indicator
 
-In your app delegate's `didFinishLaunching` method, just call
+In your app delegate's `didFinishLaunching` method, **after** initializing the window, just call
 
     UIApplication.configureLinearNetworkActivityIndicatorIfNeeded()
 
