@@ -11,7 +11,7 @@ regular status bar items.
 
 Since a circular indicator wouldn't fit, a rectangular [KITT scanner](https://giphy.com/gifs/scanner-vD9c1fVxaYZnq)-like indicator with a gradient is shown. The indicator UI can be used standalone or as a "fix" for the iOS network activity indicator (using the existing API).
 
-<img src="screenshot.gif">
+<img src="https://github.com/futuretap/FTLinearActivityIndicator/blob/master/screenshot.gif?raw=true">
 
 ## Integration
 ### As a fix for the system network activity indicator
