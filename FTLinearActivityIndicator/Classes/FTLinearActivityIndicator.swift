@@ -49,7 +49,7 @@ import UIKit
 		leftAnimation.fromValue = -self.bounds.size.width
 		leftAnimation.toValue = self.bounds.size.width
 		leftAnimation.duration = duration
-		leftAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+		leftAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
 		leftAnimation.repeatCount = Float.infinity
 		leftAnimation.isRemovedOnCompletion = false // continue running after app was in background
 		leftGradientLayer.add(leftAnimation, forKey: "leftAnimation")
@@ -65,7 +65,7 @@ import UIKit
 		rightAnimation.fromValue = self.bounds.size.width
 		rightAnimation.toValue = -self.bounds.size.width
 		rightAnimation.duration = duration
-		rightAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+		rightAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
 		rightAnimation.timeOffset = 0.5 * duration
 		rightAnimation.repeatCount = Float.infinity
 		rightAnimation.isRemovedOnCompletion = false
