@@ -1,16 +1,16 @@
 PODS:
-  - FTLinearActivityIndicator (0.1.0)
+  - FTLinearActivityIndicator (1.0.6)
 
 DEPENDENCIES:
   - FTLinearActivityIndicator (from `../`)
 
 EXTERNAL SOURCES:
   FTLinearActivityIndicator:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  FTLinearActivityIndicator: d92180ebc1316d645ee0990152620f748984675d
+  FTLinearActivityIndicator: 08874bb6c6ef825aa1d32a78238b2f580416df3a
 
 PODFILE CHECKSUM: d653595fcbe53f0d4160295f6c50f84621e4a209
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3
