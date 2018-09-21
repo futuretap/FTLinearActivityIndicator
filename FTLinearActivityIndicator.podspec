@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'FTLinearActivityIndicator'
-  s.version          = '1.1'
+  s.version          = '1.1.1'
   s.summary          = 'Add the missing network activity indicator on iPhone X'
 
   s.description      = <<-DESC
@@ -20,6 +20,7 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/ortwingentz'
 
   s.ios.deployment_target = '8.0'
+  s.swift_version = '4.2'
 
   s.source_files = 'FTLinearActivityIndicator/Classes/**/*'
   
