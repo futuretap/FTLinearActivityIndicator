@@ -51,7 +51,7 @@ pod 'FTLinearActivityIndicator'
 If you need to use Swift 4.0, please use the `swift-4.0` branch:
 
 ```ruby
-pod 'FTLinearActivityIndicator',  , :git => 'git@github.com:futuretap/FTLinearActivityIndicator.git', :branch => 'swift-4.0'
+pod 'FTLinearActivityIndicator', :git => 'git@github.com:futuretap/FTLinearActivityIndicator.git', :branch => 'swift-4.0'
 ```
 
 ## Author
