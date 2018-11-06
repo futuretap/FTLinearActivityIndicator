@@ -13,7 +13,9 @@ extension UIApplication {
 		if #available(iOS 11.0, *) {
 			// detect iPhone X
 			if let window = shared.windows.first, window.safeAreaInsets.bottom > 0.0 {
-				configureLinearNetworkActivityIndicator()
+				if UIDevice.current.userInterfaceIdiom != .pad {
+					configureLinearNetworkActivityIndicator()
+				}
 			}
 		}
 	}
