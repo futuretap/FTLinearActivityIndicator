@@ -70,7 +70,11 @@ extension UIApplication {
 			}
 		}
 		guard let indicator = indicatorWindow?.subviews.first as? FTLinearActivityIndicator else {return}
-		indicator.tintColor = statusBarStyle == .default ? UIColor.black : UIColor.white
+        if #available(iOS 13.0, *) {
+            indicator.tintColor = indicatorWindow?.windowScene?.statusBarManager?.statusBarStyle == .lightContent ? .white : .black
+        } else {
+            indicator.tintColor = statusBarStyle == .default ? UIColor.black : UIColor.white
+        }
 		if visible {
 			indicatorWindow?.isHidden = self.isStatusBarHidden
 			indicator.isHidden = false
