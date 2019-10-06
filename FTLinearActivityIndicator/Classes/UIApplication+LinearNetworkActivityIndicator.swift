@@ -10,6 +10,7 @@ import UIKit
 
 extension UIApplication {
 	@objc final public class func configureLinearNetworkActivityIndicatorIfNeeded() {
+		#if !targetEnvironment(macCatalyst)
 		if #available(iOS 11.0, *) {
 			// detect iPhone X
 			if let window = shared.windows.first, window.safeAreaInsets.bottom > 0.0 {
@@ -18,8 +19,10 @@ extension UIApplication {
 				}
 			}
 		}
+		#endif
 	}
-	
+
+	#if !targetEnvironment(macCatalyst)
 	class func configureLinearNetworkActivityIndicator() {
 		DispatchQueue.once {
 			let originalSelector = #selector(setter: UIApplication.isNetworkActivityIndicatorVisible)
@@ -30,16 +33,16 @@ extension UIApplication {
 		}
 		UIViewController.configureLinearNetworkActivityIndicator()
 	}
-	
+
 	private struct AssociatedKeys {
 		static var indicatorWindowKey = "FTLinearActivityIndicatorWindowKey"
 	}
-	
+
 	var indicatorWindow: UIWindow? {
 		get {
 			return objc_getAssociatedObject(self, &AssociatedKeys.indicatorWindowKey) as? UIWindow
 		}
-		
+
 		set {
 			if let newValue = newValue {
 				objc_setAssociatedObject(
@@ -55,13 +58,13 @@ extension UIApplication {
 
 	@objc func ft_setNetworkActivityIndicatorVisible(visible: Bool) {
 		self.ft_setNetworkActivityIndicatorVisible(visible: visible) // original implementation
-		
+
 		if visible {
 			if indicatorWindow == nil {
 				indicatorWindow = UIWindow(frame: statusBarFrame)
 				indicatorWindow?.windowLevel = UIWindow.Level.statusBar + 1
 				indicatorWindow?.isUserInteractionEnabled = false
-				
+
 				let indicator = FTLinearActivityIndicator(frame: CGRect(x: indicatorWindow!.frame.width - 74, y: 6, width: 44, height: 4))
 				indicator.isUserInteractionEnabled = false
 				indicator.hidesWhenStopped = false
@@ -90,12 +93,14 @@ extension UIApplication {
 			}
 		}
 	}
-	
+
 	func ftUpdateNetworkActivityIndicatorAppearance() {
 		self.indicatorWindow?.isHidden = !self.isNetworkActivityIndicatorVisible || self.isStatusBarHidden
 	}
+	#endif
 }
 
+#if !targetEnvironment(macCatalyst)
 extension UIViewController {
 	@objc final public class func configureLinearNetworkActivityIndicator() {
 		DispatchQueue.once {
@@ -106,7 +111,7 @@ extension UIViewController {
 			method_exchangeImplementations(originalMethod!, swizzledMethod!)
 		}
 	}
-	
+
 	@objc func ftSetNeedsStatusBarAppearanceUpdate() {
 		self.ftSetNeedsStatusBarAppearanceUpdate()
 		UIApplication.shared.ftUpdateNetworkActivityIndicatorAppearance()
@@ -117,29 +122,30 @@ extension UIViewController {
 // https://stackoverflow.com/a/39983813/235297
 extension DispatchQueue {
 	private static var _onceTracker = [String]()
-	
+
 	public class func once(file: String = #file, function: String = #function, line: Int = #line, block:()->Void) {
 		let token = file + ":" + function + ":" + String(line)
 		once(token: token, block: block)
 	}
-	
+
 	/**
 	Executes a block of code, associated with a unique token, only once.  The code is thread safe and will
 	only execute the code once even in the presence of multithreaded calls.
-	
+
 	- parameter token: A unique reverse DNS style name such as com.vectorform.<name> or a GUID
 	- parameter block: Block to execute once
 	*/
 	public class func once(token: String, block:()->Void) {
 		objc_sync_enter(self)
 		defer { objc_sync_exit(self) }
-		
-		
+
+
 		if _onceTracker.contains(token) {
 			return
 		}
-		
+
 		_onceTracker.append(token)
 		block()
 	}
 }
+#endif
