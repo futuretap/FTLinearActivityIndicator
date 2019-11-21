@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.swift_version = '5.0'
 
-  s.source_files = 'Sources/FTLinearActivityIndicator/Classes/**/*'
+  s.source_files = 'FTLinearActivityIndicator/Classes/**/*'
   
   s.frameworks = 'UIKit'
 end
