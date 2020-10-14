@@ -1,15 +1,15 @@
 Pod::Spec.new do |s|
   s.name             = 'FTLinearActivityIndicator'
-  s.version          = '1.3'
+  s.version          = '1.3.1'
   s.summary          = 'Add the missing network activity indicator on iPhone X'
 
   s.description      = <<-DESC
- 	 iPhones with a notch such as X, XS, XR, 11, 11 Pro don't display the network activity
- 	 indicator anymore. This pod brings it back by placing an activity indicator in the 
- 	 upper left of the screen on top of the regular status bar items. Since a circular
- 	 ndicator wouldn't fit, a rectangular "KITT scanner" like indicator with a gradient is 
- 	 shown. The indicator UI can be used standalone or as a "fix" for the iOS network 
- 	 activity indicator (using the existing API).
+	 iPhones with a notch such as X, XS, XR, 11 (Pro), 12 (mini, Pro) don't display the
+	 network activity indicator anymore. This pod brings it back by placing an activity
+	 indicator in the upper left of the screen on top of the regular status bar items.
+	 Since a circular ndicator wouldn't fit, a rectangular "KITT scanner" like indicator
+	 with a gradient is shown. The indicator UI can be used standalone or as a "fix" for
+	 the iOS network activity indicator (using the existing API).
                        DESC
 
   s.homepage         = 'https://github.com/futuretap/FTLinearActivityIndicator'
