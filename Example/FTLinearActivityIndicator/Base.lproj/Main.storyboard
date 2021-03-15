@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18092"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,60 +21,78 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goq-N5-EcT">
-                                <rect key="frame" x="16" y="243.5" width="343" height="180"/>
+                                <rect key="frame" x="16" y="100" width="343" height="214"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AL9-kp-yGM">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AL9-kp-yGM">
                                         <rect key="frame" x="60" y="0.0" width="223" height="30"/>
                                         <state key="normal" title="Toggle network activity indicator"/>
                                         <connections>
                                             <action selector="toggle:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7vV-3j-Hr1"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQn-vt-jbK">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQn-vt-jbK">
                                         <rect key="frame" x="50" y="50" width="243" height="30"/>
                                         <state key="normal" title="Toggle standalone activity indicator"/>
                                         <connections>
                                             <action selector="toggleStandAlone:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bjA-Eh-qPn"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FlV-j3-3FU" customClass="FTLinearActivityIndicator" customModule="FTLinearActivityIndicator">
-                                        <rect key="frame" x="131.5" y="164" width="80" height="10"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="10" id="LgS-gM-GtG"/>
-                                            <constraint firstAttribute="width" constant="80" id="rxx-t7-Eyy"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHq-XK-I1T">
-                                        <rect key="frame" x="112" y="101" width="119" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHq-XK-I1T">
+                                        <rect key="frame" x="112" y="100" width="119" height="30"/>
                                         <state key="normal" title="Toggle status bar"/>
                                         <connections>
                                             <action selector="toggleStatusBarWith_sender:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="c1a-25-9EA"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pU4-bF-VhJ">
+                                        <rect key="frame" x="1" y="150" width="341" height="30"/>
+                                        <state key="normal" title="Show image picker (for green dot, only on device)"/>
+                                        <connections>
+                                            <action selector="showCamera" destination="vXZ-lx-hvc" eventType="touchUpInside" id="O9q-82-qK7"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FlV-j3-3FU" customClass="FTLinearActivityIndicator" customModule="FTLinearActivityIndicator">
+                                        <rect key="frame" x="131.5" y="200" width="80" height="8"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="8" id="yxg-Yi-UYR"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="AL9-kp-yGM" firstAttribute="top" secondItem="goq-N5-EcT" secondAttribute="top" id="0AK-a5-MXJ"/>
-                                    <constraint firstItem="FlV-j3-3FU" firstAttribute="centerX" secondItem="goq-N5-EcT" secondAttribute="centerX" id="0rF-Gj-cmu"/>
+                                    <constraint firstItem="FlV-j3-3FU" firstAttribute="centerX" secondItem="pU4-bF-VhJ" secondAttribute="centerX" id="1bR-E7-mgF"/>
                                     <constraint firstItem="nQn-vt-jbK" firstAttribute="centerX" secondItem="goq-N5-EcT" secondAttribute="centerX" id="6Re-Mf-m3J"/>
-                                    <constraint firstItem="hHq-XK-I1T" firstAttribute="top" secondItem="nQn-vt-jbK" secondAttribute="bottom" constant="21" id="GRw-0S-WKZ"/>
+                                    <constraint firstItem="pU4-bF-VhJ" firstAttribute="centerX" secondItem="goq-N5-EcT" secondAttribute="centerX" id="9Hg-Lv-ZHX"/>
+                                    <constraint firstItem="hHq-XK-I1T" firstAttribute="top" secondItem="nQn-vt-jbK" secondAttribute="bottom" constant="20" id="GRw-0S-WKZ"/>
                                     <constraint firstItem="hHq-XK-I1T" firstAttribute="centerX" secondItem="goq-N5-EcT" secondAttribute="centerX" id="Hkr-My-AP1"/>
                                     <constraint firstItem="nQn-vt-jbK" firstAttribute="top" secondItem="AL9-kp-yGM" secondAttribute="bottom" constant="20" id="KXp-6d-9x3"/>
-                                    <constraint firstAttribute="bottom" secondItem="FlV-j3-3FU" secondAttribute="bottom" constant="6" id="LZG-XQ-MOu"/>
                                     <constraint firstItem="AL9-kp-yGM" firstAttribute="centerX" secondItem="goq-N5-EcT" secondAttribute="centerX" id="V7O-B6-zgg"/>
-                                    <constraint firstAttribute="height" constant="180" id="Yfr-DT-2zj"/>
+                                    <constraint firstItem="pU4-bF-VhJ" firstAttribute="top" secondItem="hHq-XK-I1T" secondAttribute="bottom" constant="20" id="XtE-FD-q7J"/>
+                                    <constraint firstAttribute="bottom" secondItem="FlV-j3-3FU" secondAttribute="bottom" constant="6" id="jpA-TN-LCJ"/>
+                                    <constraint firstItem="FlV-j3-3FU" firstAttribute="top" secondItem="pU4-bF-VhJ" secondAttribute="bottom" constant="20" id="mKH-pH-ott"/>
+                                    <constraint firstItem="FlV-j3-3FU" firstAttribute="leading" secondItem="goq-N5-EcT" secondAttribute="leading" constant="131.5" id="nnO-ug-Gjy"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VXC-iS-Bsq">
+                                <rect key="frame" x="0.0" y="314" width="375" height="353"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="goq-N5-EcT" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="100" id="1hX-6h-syq"/>
+                            <constraint firstAttribute="trailing" secondItem="VXC-iS-Bsq" secondAttribute="trailing" id="C1P-Nm-MaN"/>
                             <constraint firstItem="goq-N5-EcT" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="EfR-mE-saI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="goq-N5-EcT" secondAttribute="trailing" id="MnY-ew-fRw"/>
-                            <constraint firstItem="goq-N5-EcT" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="ZdA-f8-U27"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="VXC-iS-Bsq" secondAttribute="bottom" id="fT5-Yz-5Jb"/>
+                            <constraint firstItem="VXC-iS-Bsq" firstAttribute="top" secondItem="goq-N5-EcT" secondAttribute="bottom" id="i0j-Et-yjy"/>
+                            <constraint firstItem="VXC-iS-Bsq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="kzt-8z-4JR"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imagePickerContainer" destination="VXC-iS-Bsq" id="RIm-Tf-y6g"/>
                         <outlet property="standAloneIndicator" destination="FlV-j3-3FU" id="sHF-TN-0Wg"/>
                     </connections>
                 </viewController>
@@ -82,4 +101,9 @@
             <point key="canvasLocation" x="32.799999999999997" y="32.833583208395808"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

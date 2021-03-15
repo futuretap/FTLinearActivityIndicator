@@ -11,6 +11,7 @@ import FTLinearActivityIndicator
 
 class ViewController: UIViewController {
 	@IBOutlet var standAloneIndicator: FTLinearActivityIndicator?
+	@IBOutlet var imagePickerContainer: UIView!
 	
 	var statusBarHidden = false
 	
@@ -41,6 +42,14 @@ class ViewController: UIViewController {
 	@IBAction func toggleStatusBar(_sender: Any) {
 		statusBarHidden = !statusBarHidden
 		setNeedsStatusBarAppearanceUpdate()
+	}
+	
+	@IBAction func showCamera() {
+		let cameraPickerController = UIImagePickerController()
+		cameraPickerController.sourceType = .camera
+		
+		imagePickerContainer.addSubview(cameraPickerController.view)
+		addChild(cameraPickerController)
 	}
 	
 	override var prefersStatusBarHidden: Bool {
