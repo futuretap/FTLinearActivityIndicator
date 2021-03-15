@@ -12,7 +12,7 @@ extension UIApplication {
 	@objc final public class func configureLinearNetworkActivityIndicatorIfNeeded() {
 		#if !targetEnvironment(macCatalyst)
 		if #available(iOS 11.0, *) {
-			// detect iPhone X
+			// detect notch
 			if let window = shared.windows.first, window.safeAreaInsets.bottom > 0.0 {
 				if UIDevice.current.userInterfaceIdiom != .pad {
 					configureLinearNetworkActivityIndicator()
@@ -65,7 +65,30 @@ extension UIApplication {
 				indicatorWindow?.windowLevel = UIWindow.Level.statusBar + 1
 				indicatorWindow?.isUserInteractionEnabled = false
 
-				let indicator = FTLinearActivityIndicator(frame: CGRect(x: indicatorWindow!.frame.width - 74, y: 6, width: 44, height: 4))
+				// notched iPhones differ in corner radius and right notch width
+				// => lookup margin from right window edge, and width
+				let layout: [String: (CGFloat, CGFloat)] = [
+					"iPhone10,3": (74, 44), // iPhone X
+					"iPhone10,6": (74, 44), // iPhone X
+					"iPhone11,2": (74, 44), // Phone Xs
+					"iPhone11,4": (74, 44), // iPhone Xs Max
+					"iPhone11,6": (74, 44), // iPhone Xs Max
+					"iPhone11,8": (70, 40), // iPhone XR
+					"iPhone12,1": (70, 40), // iPhone 11
+					"iPhone12,3": (60, 34), // iPhone 11 Pro
+					"iPhone12,5": (74, 44), // iPhone 11 Pro Max
+					"iPhone13,1": (60, 30), // iPhone 12 Mini
+					"iPhone13,2": (72, 34), // iPhone 12
+					"iPhone13,3": (72, 34), // iPhone 12 Pro
+					"iPhone13,4": (80, 42), // iPhone 12 Pro Max
+				]
+				let modelName = UIDevice.current.ftModelName
+				let config = layout[modelName] ?? (74, 44)
+				
+				let x = indicatorWindow!.frame.width - config.0
+				let width = config.1
+				
+				let indicator = FTLinearActivityIndicator(frame: CGRect(x: x, y: 7, width: width, height: 4.5))
 				indicator.isUserInteractionEnabled = false
 				indicator.hidesWhenStopped = false
 				indicator.startAnimating()
