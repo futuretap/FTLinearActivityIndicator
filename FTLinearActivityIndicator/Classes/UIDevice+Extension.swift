@@ -5,7 +5,7 @@
 //  Created by Ortwin Gentz on 15.03.21.
 //
 
-import Foundation
+import UIKit
 
 public extension UIDevice {
 	var ftModelName: String {
