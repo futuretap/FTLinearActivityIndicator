@@ -42,6 +42,7 @@
 		70DB2B5AF5AD153D672CE03C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		77D7FCB080AAEA7B69D9DC1E /* Pods-FTLinearActivityIndicator_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTLinearActivityIndicator_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-FTLinearActivityIndicator_Example/Pods-FTLinearActivityIndicator_Example.release.xcconfig"; sourceTree = "<group>"; };
 		84C1C4FC9373D832AF9E068D /* FTLinearActivityIndicator.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = FTLinearActivityIndicator.podspec; path = ../FTLinearActivityIndicator.podspec; sourceTree = "<group>"; };
+		AA054DE82600212F00180DA1 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 		D1FBF6F59667081B55E1FC71 /* Pods_FTLinearActivityIndicator_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FTLinearActivityIndicator_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58583BC5F470B03A811EFCD /* Pods-FTLinearActivityIndicator_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTLinearActivityIndicator_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FTLinearActivityIndicator_Tests/Pods-FTLinearActivityIndicator_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E1D3C8E5A874058EE6B1E3C8 /* Pods-FTLinearActivityIndicator_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTLinearActivityIndicator_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FTLinearActivityIndicator_Example/Pods-FTLinearActivityIndicator_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
+				AA054DE82600212F00180DA1 /* Package.swift */,
 				607FACD21AFB9204008FA782 /* Example for FTLinearActivityIndicator */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
