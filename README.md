@@ -65,6 +65,7 @@ pod 'FTLinearActivityIndicator'
 ## Author
 
 Ortwin Gentz, [FutureTap GmbH](https://www.futuretap.com), Twitter: [@ortwingentz](https://twitter.com/ortwingentz)
+If you would like to support my Open Source work, consider joining me as a [sponsor](https://github.com/sponsors/futuretap)! 💪️ Your sponsorship enables me to spend more time on FTLinearActivityIndicator and other community projects. Thank you!
 
 ## License
 
