@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOSApplicationExtension, unavailable)
 extension UIApplication {
 	@objc final public class func configureLinearNetworkActivityIndicatorIfNeeded() {
 		#if !targetEnvironment(macCatalyst)
@@ -124,6 +125,7 @@ extension UIApplication {
 }
 
 #if !targetEnvironment(macCatalyst)
+@available(iOSApplicationExtension, unavailable)
 extension UIViewController {
 	@objc final public class func configureLinearNetworkActivityIndicator() {
 		DispatchQueue.once {

@@ -9,6 +9,7 @@
 import UIKit
 import FTLinearActivityIndicator
 
+@available(iOSApplicationExtension, unavailable)
 class ViewController: UIViewController {
 	@IBOutlet var standAloneIndicator: FTLinearActivityIndicator?
 	@IBOutlet var imagePickerContainer: UIView!

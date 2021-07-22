@@ -9,6 +9,7 @@
 import UIKit
 import FTLinearActivityIndicator
 
+@available(iOSApplicationExtension, unavailable)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
