@@ -62,7 +62,8 @@ extension UIApplication {
 
 		if visible {
 			if indicatorWindow == nil {
-				indicatorWindow = UIWindow(frame: statusBarFrame)
+				let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 12)
+				indicatorWindow = UIWindow(frame: frame)
 				indicatorWindow?.windowLevel = UIWindow.Level.statusBar + 1
 				indicatorWindow?.isUserInteractionEnabled = false
 
