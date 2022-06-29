@@ -22,6 +22,10 @@ regular status bar items on the following devices:
 - iPhone 12 mini
 - iPhone 12 Pro
 - iPhone 12 Pro Max
+- iPhone 13
+- iPhone 13 mini
+- iPhone 13 Pro
+- iPhone 13 Pro Max
 
 Since a circular indicator wouldn't fit, a rectangular [KITT scanner](https://giphy.com/gifs/scanner-vD9c1fVxaYZnq)-like indicator with a gradient is shown. The indicator UI can be used standalone or as a "fix" for the iOS network activity indicator (using the existing API).
 

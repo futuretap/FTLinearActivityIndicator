@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name             = 'FTLinearActivityIndicator'
-  s.version          = '1.4.2'
-  s.summary          = 'Add the missing network activity indicator on iPhone X'
+  s.version          = '1.4.3'
+  s.summary          = 'Add the missing network activity indicator on iPhone with notch'
 
   s.description      = <<-DESC
-	 iPhones with a notch such as X, XS, XR, 11 (Pro), 12 (mini, Pro) don't display the
+	 iPhones with a notch such as X, XS, XR, 11 (Pro), 12-13 (mini, Pro) don't display the
 	 network activity indicator anymore. This pod brings it back by placing an activity
 	 indicator in the upper right of the screen on top of the regular status bar items.
 	 Since a circular indicator wouldn't fit, a rectangular "KITT scanner" like indicator
