@@ -27,7 +27,7 @@ regular status bar items on the following devices:
 - iPhone 13 Pro
 - iPhone 13 Pro Max
 
-Since a circular indicator wouldn't fit, a rectangular [KITT scanner](https://giphy.com/gifs/scanner-vD9c1fVxaYZnq)-like indicator with a gradient is shown. The indicator UI can be used standalone or as a "fix" for the iOS network activity indicator (using the existing API).
+Since a circular indicator wouldn't fit, a rectangular [KITT scanner](https://giphy.com/gifs/80s-nbc-knight-rider-Bo2WsocASVBm0)-like indicator with a gradient is shown. The indicator UI can be used standalone or as a "fix" for the iOS network activity indicator (using the existing API).
 
 <img src="https://github.com/futuretap/FTLinearActivityIndicator/blob/master/screenshot.gif?raw=true">
 
