@@ -87,6 +87,10 @@ extension UIApplication {
                     "iPhone14,5": (72, 34), // iPhone 13
                     "iPhone14,2": (72, 34), // iPhone 13 Pro
 					"iPhone14,3": (80, 42), // iPhone 13 Pro Max
+                    "iPhone14,7": (72, 34), // iPhone 14
+                    "iPhone14,8": (80, 42), // iPhone 14 Plus
+                    "iPhone15,2": (72, 34), // iPhone 14 Pro
+                    "iPhone15,3": (80, 42), // iPhone 14 Pro Max
 				]
 				let modelName = UIDevice.current.ftModelName
 				let config = layout[modelName] ?? (74, 44)
