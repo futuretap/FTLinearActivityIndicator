@@ -43,8 +43,7 @@ public extension UIDevice {
 		}
 		// When running in simulator, identifier will be one of "i386", "x86_64", "arm64" instead of what we want.
 		switch identifier {
-		case "i386", "x86_64", "arm64":
-            result = ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? identifier
+		case "i386", "x86_64", "arm64": result = ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? identifier
 		default: result = identifier
 		}
         
