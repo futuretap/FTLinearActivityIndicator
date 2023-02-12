@@ -33,8 +33,8 @@ public enum ModelName: String {
 
 public extension UIDevice {
 	var ftModelName: ModelName? {
-        let result: String
-        var systemInfo = utsname()
+		let result: String
+		var systemInfo = utsname()
 		uname(&systemInfo)
 		let machineMirror = Mirror(reflecting: systemInfo.machine)
 		let identifier = machineMirror.children.reduce("") { identifier, element in
@@ -47,6 +47,6 @@ public extension UIDevice {
 		default: result = identifier
 		}
         
-        return .init(rawValue: result)
+		return .init(rawValue: result)
 	}
 }

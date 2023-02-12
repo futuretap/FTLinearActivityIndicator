@@ -70,30 +70,30 @@ extension UIApplication {
 				// notched iPhones differ in corner radius and right notch width
 				// => lookup margin from right window edge, and width
 				let layout: [ModelName: (CGFloat, CGFloat)] = [
-                    .iPhoneX1: (74, 44),
-                    .iPhoneX2: (74, 44),
-                    .iPhoneXs: (74, 44),
-                    .iPhoneXsMax1: (74, 44),
-                    .iPhoneXsMax2: (74, 44),
-                    .iPhoneXR: (70, 40),
-                    .iPhone11: (70, 40),
-                    .iPhone11Pro: (60, 34),
-                    .iPhone11ProMax: (74, 44),
-                    .iPhone12Mini: (60, 30),
-                    .iPhone12: (72, 34),
-                    .iPhone12Pro: (72, 34),
-                    .iPhone12ProMax: (80, 42),
-                    .iPhone13Mini: (60, 30),
-                    .iPhone13: (72, 34),
-                    .iPhone13Pro: (72, 34),
-                    .iPhone13ProMax: (80, 42),
-                    .iPhone14: (72, 34),
-                    .iPhone14Plus: (80, 42),
-                    .iPhone14Pro: (72, 34),
-                    .iPhone14ProMax: (80, 42),
+					.iPhoneX1: (74, 44),
+					.iPhoneX2: (74, 44),
+					.iPhoneXs: (74, 44),
+					.iPhoneXsMax1: (74, 44),
+					.iPhoneXsMax2: (74, 44),
+					.iPhoneXR: (70, 40),
+					.iPhone11: (70, 40),
+					.iPhone11Pro: (60, 34),
+					.iPhone11ProMax: (74, 44),
+					.iPhone12Mini: (60, 30),
+					.iPhone12: (72, 34),
+					.iPhone12Pro: (72, 34),
+					.iPhone12ProMax: (80, 42),
+					.iPhone13Mini: (60, 30),
+					.iPhone13: (72, 34),
+					.iPhone13Pro: (72, 34),
+					.iPhone13ProMax: (80, 42),
+					.iPhone14: (72, 34),
+					.iPhone14Plus: (80, 42),
+					.iPhone14Pro: (72, 34),
+					.iPhone14ProMax: (80, 42),
 				]
 				let modelName = UIDevice.current.ftModelName
-                let config = modelName.flatMap { layout[$0] } ?? (74, 44)
+				let config = modelName.flatMap { layout[$0] } ?? (74, 44)
 				
 				let x = indicatorWindow!.frame.width - config.0
 				let width = config.1
