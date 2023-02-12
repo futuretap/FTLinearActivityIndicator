@@ -69,31 +69,31 @@ extension UIApplication {
 
 				// notched iPhones differ in corner radius and right notch width
 				// => lookup margin from right window edge, and width
-				let layout: [String: (CGFloat, CGFloat)] = [
-					"iPhone10,3": (74, 44), // iPhone X
-					"iPhone10,6": (74, 44), // iPhone X
-					"iPhone11,2": (74, 44), // Phone Xs
-					"iPhone11,4": (74, 44), // iPhone Xs Max
-					"iPhone11,6": (74, 44), // iPhone Xs Max
-					"iPhone11,8": (70, 40), // iPhone XR
-					"iPhone12,1": (70, 40), // iPhone 11
-					"iPhone12,3": (60, 34), // iPhone 11 Pro
-					"iPhone12,5": (74, 44), // iPhone 11 Pro Max
-					"iPhone13,1": (60, 30), // iPhone 12 Mini
-					"iPhone13,2": (72, 34), // iPhone 12
-					"iPhone13,3": (72, 34), // iPhone 12 Pro
-					"iPhone13,4": (80, 42), // iPhone 12 Pro Max
-					"iPhone14,4": (60, 30), // iPhone 13 Mini
-					"iPhone14,5": (72, 34), // iPhone 13
-					"iPhone14,2": (72, 34), // iPhone 13 Pro
-					"iPhone14,3": (80, 42), // iPhone 13 Pro Max
-					"iPhone14,7": (72, 34), // iPhone 14
-					"iPhone14,8": (80, 42), // iPhone 14 Plus
-					"iPhone15,2": (72, 34), // iPhone 14 Pro
-					"iPhone15,3": (80, 42), // iPhone 14 Pro Max
+				let layout: [ModelName: (CGFloat, CGFloat)] = [
+                    .iPhoneX1: (74, 44),
+                    .iPhoneX2: (74, 44),
+                    .iPhoneXs: (74, 44),
+                    .iPhoneXsMax1: (74, 44),
+                    .iPhoneXsMax2: (74, 44),
+                    .iPhoneXR: (70, 40),
+                    .iPhone11: (70, 40),
+                    .iPhone11Pro: (60, 34),
+                    .iPhone11ProMax: (74, 44),
+                    .iPhone12Mini: (60, 30),
+                    .iPhone12: (72, 34),
+                    .iPhone12Pro: (72, 34),
+                    .iPhone12ProMax: (80, 42),
+                    .iPhone13Mini: (60, 30),
+                    .iPhone13: (72, 34),
+                    .iPhone13Pro: (72, 34),
+                    .iPhone13ProMax: (80, 42),
+                    .iPhone14: (72, 34),
+                    .iPhone14Plus: (80, 42),
+                    .iPhone14Pro: (72, 34),
+                    .iPhone14ProMax: (80, 42),
 				]
 				let modelName = UIDevice.current.ftModelName
-				let config = layout[modelName] ?? (74, 44)
+                let config = modelName.flatMap { layout[$0] } ?? (74, 44)
 				
 				let x = indicatorWindow!.frame.width - config.0
 				let width = config.1
