@@ -36,7 +36,7 @@ extension UIApplication {
 	}
 
 	private struct AssociatedKeys {
-		static var indicatorWindowKey = "FTLinearActivityIndicatorWindowKey"
+		static var indicatorWindowKey: UInt8 = 0
 	}
 
 	var indicatorWindow: UIWindow? {
