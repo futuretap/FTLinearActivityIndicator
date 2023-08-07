@@ -11,7 +11,7 @@ import UIKit
 @available(iOSApplicationExtension, unavailable)
 extension UIApplication {
 	@objc final public class func configureLinearNetworkActivityIndicatorIfNeeded() {
-		#if !targetEnvironment(macCatalyst)
+#if !targetEnvironment(macCatalyst) && (swift(<5.9) || !os(visionOS))
 		if #available(iOS 11.0, *) {
 			// detect notch
 			if let window = shared.windows.first, window.safeAreaInsets.bottom > 0.0 {
@@ -23,7 +23,7 @@ extension UIApplication {
 		#endif
 	}
 
-	#if !targetEnvironment(macCatalyst)
+#if !targetEnvironment(macCatalyst) && (swift(<5.9) || !os(visionOS))
 	class func configureLinearNetworkActivityIndicator() {
 		DispatchQueue.once {
 			let originalSelector = #selector(setter: UIApplication.isNetworkActivityIndicatorVisible)
@@ -133,7 +133,7 @@ extension UIApplication {
 	#endif
 }
 
-#if !targetEnvironment(macCatalyst)
+#if !targetEnvironment(macCatalyst) && (swift(<5.9) || !os(visionOS))
 @available(iOSApplicationExtension, unavailable)
 extension UIViewController {
 	@objc final public class func configureLinearNetworkActivityIndicator() {

@@ -27,7 +27,9 @@ class ViewController: UIViewController {
     }
 
 	@IBAction func toggle(_ sender: Any) {
+#if (swift(<5.9) || !os(visionOS))
 		UIApplication.shared.isNetworkActivityIndicatorVisible = !UIApplication.shared.isNetworkActivityIndicatorVisible
+#endif
 	}
 
 	@IBAction func toggleStandAlone(_ sender: Any) {
@@ -42,7 +44,9 @@ class ViewController: UIViewController {
 	
 	@IBAction func toggleStatusBar(_sender: Any) {
 		statusBarHidden = !statusBarHidden
+#if (swift(<5.9) || !os(visionOS))
 		setNeedsStatusBarAppearanceUpdate()
+#endif
 	}
 	
 	@IBAction func showCamera() {
