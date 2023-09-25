@@ -15,9 +15,11 @@
 		AAFF85F52A80F7A600EBE27D /* FTLinearActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = AAFF85F42A80F7A600EBE27D /* FTLinearActivityIndicator */; };
 		AAFF85F82A80FD9300EBE27D /* FTLinearActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = AAFF85F72A80FD9300EBE27D /* FTLinearActivityIndicator */; };
 		AAFF85FB2A80FDD000EBE27D /* FTLinearActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = AAFF85FA2A80FDD000EBE27D /* FTLinearActivityIndicator */; };
+		CCB581F2230110A47817D6F0 /* Pods_FTLinearActivityIndicator_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF63F17AD2098A1B77EFB83 /* Pods_FTLinearActivityIndicator_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3DF63F17AD2098A1B77EFB83 /* Pods_FTLinearActivityIndicator_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FTLinearActivityIndicator_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* FTLinearActivityIndicator_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FTLinearActivityIndicator_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +30,8 @@
 		70DB2B5AF5AD153D672CE03C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		84C1C4FC9373D832AF9E068D /* FTLinearActivityIndicator.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = FTLinearActivityIndicator.podspec; path = ../FTLinearActivityIndicator.podspec; sourceTree = "<group>"; };
 		AAC46FFA2A80FFD500FE06C7 /* FTLinearActivityIndicator */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FTLinearActivityIndicator; path = ..; sourceTree = "<group>"; };
+		D43DD0F40C39A7CC38ABB711 /* Pods-FTLinearActivityIndicator_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTLinearActivityIndicator_Example.debug.xcconfig"; path = "Target Support Files/Pods-FTLinearActivityIndicator_Example/Pods-FTLinearActivityIndicator_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E950E36E7D4847F88E7A6FB8 /* Pods-FTLinearActivityIndicator_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTLinearActivityIndicator_Example.release.xcconfig"; path = "Target Support Files/Pods-FTLinearActivityIndicator_Example/Pods-FTLinearActivityIndicator_Example.release.xcconfig"; sourceTree = "<group>"; };
 		FC9C24D64BC956365CF41A07 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,12 +43,21 @@
 				AAFF85F82A80FD9300EBE27D /* FTLinearActivityIndicator in Frameworks */,
 				AAFF85F52A80F7A600EBE27D /* FTLinearActivityIndicator in Frameworks */,
 				AAFF85FB2A80FDD000EBE27D /* FTLinearActivityIndicator in Frameworks */,
+				CCB581F2230110A47817D6F0 /* Pods_FTLinearActivityIndicator_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3662425769B64D7FB965FE8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DF63F17AD2098A1B77EFB83 /* Pods_FTLinearActivityIndicator_Example.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +65,8 @@
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for FTLinearActivityIndicator */,
 				607FACD11AFB9204008FA782 /* Products */,
+				608979424BE18BD04D61BA2E /* Pods */,
+				3662425769B64D7FB965FE8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +110,15 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		608979424BE18BD04D61BA2E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D43DD0F40C39A7CC38ABB711 /* Pods-FTLinearActivityIndicator_Example.debug.xcconfig */,
+				E950E36E7D4847F88E7A6FB8 /* Pods-FTLinearActivityIndicator_Example.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AAC46FF92A80FFD500FE06C7 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,9 +134,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "FTLinearActivityIndicator_Example" */;
 			buildPhases = (
+				F5008D4ACD8AD8BB722614F4 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
+				9C82AC55B01FDC12034DD61F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,8 +179,6 @@
 				Base,
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
-			packageReferences = (
-			);
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -176,6 +200,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9C82AC55B01FDC12034DD61F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FTLinearActivityIndicator_Example/Pods-FTLinearActivityIndicator_Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FTLinearActivityIndicator_Example/Pods-FTLinearActivityIndicator_Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FTLinearActivityIndicator_Example/Pods-FTLinearActivityIndicator_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5008D4ACD8AD8BB722614F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FTLinearActivityIndicator_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		607FACCC1AFB9204008FA782 /* Sources */ = {
@@ -258,7 +324,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -309,7 +375,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -321,6 +387,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D43DD0F40C39A7CC38ABB711 /* Pods-FTLinearActivityIndicator_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VW6ER3YSC3;
@@ -342,6 +409,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E950E36E7D4847F88E7A6FB8 /* Pods-FTLinearActivityIndicator_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VW6ER3YSC3;
