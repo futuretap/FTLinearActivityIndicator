@@ -7,7 +7,7 @@
 
 import UIKit
 
-public enum ModelName: String {
+public enum FTModelName: String {
     case iPhoneX1 = "iPhone10,3"
     case iPhoneX2 = "iPhone10,6"
     case iPhoneXs = "iPhone11,2"
@@ -29,10 +29,23 @@ public enum ModelName: String {
     case iPhone14Plus = "iPhone14,8"
     case iPhone14Pro = "iPhone15,2"
     case iPhone14ProMax = "iPhone15,3"
+    case iPhone15 = "iPhone15,4"
+    case iPhone15Plus = "iPhone15,5"
+    case iPhone15Pro = "iPhone16,1"
+    case iPhone15ProMax = "iPhone16,2"
+    
+    public var hasDynamicIsland: Bool {
+        switch self {
+        case .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax:
+            return true
+        default:
+            return false
+        }
+    }
 }
 
 public extension UIDevice {
-	var ftModelName: ModelName? {
+	var ftModelName: FTModelName? {
 		let result: String
 		var systemInfo = utsname()
 		uname(&systemInfo)

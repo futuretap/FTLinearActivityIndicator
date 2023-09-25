@@ -69,36 +69,19 @@ extension UIApplication {
 
 				// notched iPhones differ in corner radius and right notch width
 				// => lookup margin from right window edge, and width
-				let layout: [ModelName: (CGFloat, CGFloat)] = [
-					.iPhoneX1: (74, 44),
-					.iPhoneX2: (74, 44),
-					.iPhoneXs: (74, 44),
-					.iPhoneXsMax1: (74, 44),
-					.iPhoneXsMax2: (74, 44),
-					.iPhoneXR: (70, 40),
-					.iPhone11: (70, 40),
-					.iPhone11Pro: (60, 34),
-					.iPhone11ProMax: (74, 44),
-					.iPhone12Mini: (60, 30),
-					.iPhone12: (72, 34),
-					.iPhone12Pro: (72, 34),
-					.iPhone12ProMax: (80, 42),
-					.iPhone13Mini: (60, 30),
-					.iPhone13: (72, 34),
-					.iPhone13Pro: (72, 34),
-					.iPhone13ProMax: (80, 42),
-					.iPhone14: (72, 34),
-					.iPhone14Plus: (80, 42),
-					.iPhone14Pro: (72, 34),
-					.iPhone14ProMax: (80, 42),
-				]
-				let modelName = UIDevice.current.ftModelName
-				let config = modelName.flatMap { layout[$0] } ?? (74, 44)
+                let modelName: FTModelName? = UIDevice.current.ftModelName
+                let config: FTConfig = FTConfig.config(for: modelName) ?? FTConfig.defaultConfig
+
+				let x = (indicatorWindow?.frame.width ?? 0) - config.x
 				
-				let x = indicatorWindow!.frame.width - config.0
-				let width = config.1
-				
-				let indicator = FTLinearActivityIndicator(frame: CGRect(x: x, y: 7, width: width, height: 4.5))
+                let indicator = FTLinearActivityIndicator(
+                    frame: CGRect(
+                        x: x,
+                        y: config.y,
+                        width: config.width,
+                        height: config.height
+                    )
+                )
 				indicator.isUserInteractionEnabled = false
 				indicator.hidesWhenStopped = false
 				indicator.startAnimating()
@@ -183,3 +166,67 @@ extension DispatchQueue {
 	}
 }
 #endif
+
+private struct FTConfig {
+    let x: Double
+    let y: Double
+    let width: Double
+    let height: Double
+    
+    static func config(for model: FTModelName?) -> FTConfig? {
+        guard let model else { return nil }
+        let x: Double
+        let width: Double
+        switch model {
+        case .iPhoneX1, .iPhoneX2, .iPhoneXs, .iPhoneXsMax1, .iPhoneXsMax2, .iPhone11ProMax:
+            x = 74
+            width = 44
+        case .iPhoneXR, .iPhone11:
+            x = 70
+            width = 40
+        case .iPhone11Pro:
+            x = 60
+            width = 34
+        case .iPhone12Mini, .iPhone13Mini:
+            x = 60
+            width = 30
+        case .iPhone12, .iPhone12Pro, .iPhone13, .iPhone13Pro, .iPhone14:
+            x = 72
+            width = 34
+        case .iPhone12ProMax, .iPhone13ProMax, .iPhone14ProMax:
+            x = 80
+            width = 42
+        case .iPhone14Plus, .iPhone14Pro, .iPhone15Plus, .iPhone15ProMax:
+            x = 88
+            width = 48
+        case .iPhone15, .iPhone15Pro:
+            x = 84
+            width = 48
+        }
+        return FTConfig(
+            x: x,
+            y: model.hasDynamicIsland ? FTConstants.defaultY : FTConstants.dynamicIslandY,
+            width: width,
+            height: FTConstants.defaultHeight
+        )
+    }
+    
+    static let defaultConfig: FTConfig = {
+        print("⚠️ Hey! This model is not supported by FTLinearActivityIndicator.\n💡Please consider making a PR to the repository: https://github.com/futuretap/FTLinearActivityIndicator")
+        return FTConfig(
+            x: FTConstants.defaultX,
+            y: FTConstants.defaultY,
+            width: FTConstants.defaultWidth,
+            height: FTConstants.defaultHeight
+        )
+    }()
+}
+
+private struct FTConstants {
+    static let defaultX: Double = 74
+    static let defaultY: Double = 7
+    static let defaultWidth: Double = 44
+    static let defaultHeight: Double = 4.5
+
+    static let dynamicIslandY: Double = 9
+}
