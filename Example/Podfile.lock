@@ -1,0 +1,16 @@
+PODS:
+  - FTLinearActivityIndicator (1.7)
+
+DEPENDENCIES:
+  - FTLinearActivityIndicator (from `../`)
+
+EXTERNAL SOURCES:
+  FTLinearActivityIndicator:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FTLinearActivityIndicator: 5eed7115d269cc9647dd38c6e19e55e785b3e6e6
+
+PODFILE CHECKSUM: 7fb16d18f1acb07ca3fd99f7dea976945e2dce85
+
+COCOAPODS: 1.13.0
