@@ -2,10 +2,4 @@ use_frameworks!
 
 target 'FTLinearActivityIndicator_Example' do
   pod 'FTLinearActivityIndicator', :path => '../'
-
-  target 'FTLinearActivityIndicator_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end
