@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'FTLinearActivityIndicator'
-  s.version          = '1.6'
+  s.version          = '1.7'
   s.summary          = 'Add the missing network activity indicator on newer iPhones'
 
   s.description      = <<-DESC
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/futuretap/FTLinearActivityIndicator.git', :tag => s.version.to_s }
   s.social_media_url = 'https://mastodon.cloud/@ortwingentz'
 
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '12.0'
   s.swift_version = '5.0'
 
   s.source_files = 'FTLinearActivityIndicator/Classes/**/*'
