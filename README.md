@@ -61,7 +61,7 @@ Include a `FTLinearActivityIndicator` view in your storyboard or instantiate it 
 
 ## Requirements
 
-- iOS 11 or higher
+- iOS 12 or higher (iOS 11 is supported until version 1.6)
 - compiles for Mac Catalyst or visionOS (without network activity indicator)
 
 ## Installation
@@ -86,11 +86,11 @@ Then run `pod install`.
 To open an example project, just call `pod try FTLinearActivityIndicator` on the command line.
 
 ## Author
-
-Ortwin Gentz, [FutureTap GmbH](https://www.futuretap.com), Mastodon/Fediverse: [@ortwingentz@mastodon.cloud](https://mastodon.cloud/@ortwingentz)
-
-If you would like to support my Open Source work, consider joining me as a [sponsor](https://github.com/sponsors/futuretap)! 💪️ Your sponsorship enables me to spend more time on FTLinearActivityIndicator and other community projects. Thank you!
+Developed by [Ortwin Gentz](https://www.futuretap.com/about/ortwin-gentz) ([Mastodon](https://mastodon.cloud/@ortwingentz)) and used in [FutureTap](https://www.futuretap.com)’s [Where To?](https://wheretoapp.com) and [Streets](https://streets.app) apps – we eat our own dog food!
 
 ## License
-
 FTLinearActivityIndicator is available under the [CC-BY-SA 4.0 license](http://creativecommons.org/licenses/by-sa/4.0/). You may copy and redistribute, adapt and build upon the framework for any purpose, even commercially, as long as you give credit to me in the About menu or a similar place in the app.
+If you need a different license without attribution requirement, please contact me and we can work something out.
+
+## Sponsors wanted
+If you would like to support my Open Source work, consider joining me as a [sponsor](https://github.com/sponsors/futuretap)! 💪️ Your sponsorship enables me to spend more time on this and other community projects. Thank you!
