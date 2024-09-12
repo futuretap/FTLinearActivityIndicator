@@ -95,6 +95,10 @@ extension UIApplication {
 					.iPhone15Plus: (80, 42),
 					.iPhone15Pro: (72, 34),
 					.iPhone15ProMax: (80, 42),
+					.iPhone16: (84, 36),
+					.iPhone16Plus: (96, 42),
+					.iPhone16Pro: (86, 38),
+					.iPhone16ProMax: (96, 42),
 				]
 				let modelName = UIDevice.current.ftModelName
 				let config = modelName.flatMap { layout[$0] } ?? (74, 44)
