@@ -37,6 +37,8 @@ public enum ModelName: String {
 	case iPhone16Plus = "iPhone17,4"
 	case iPhone16Pro = "iPhone17,1"
 	case iPhone16ProMax = "iPhone17,2"
+	case iPhoneSE2 = "iPhone12,8"
+	case iPhoneSE3 = "iPhone14,6"
 }
 
 public extension UIDevice {

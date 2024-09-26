@@ -7,37 +7,10 @@
 [![Sponsor](https://img.shields.io/badge/Sponsor-ff40a0)](https://github.com/sponsors/futuretap)
 [![Mastodon](https://img.shields.io/mastodon/follow/000010558?domain=https%3A%2F%2Fmastodon.cloud)](https://mastodon.cloud/@ortwingentz)
 
-iPhones with a notch or Dynamic Island don't display the network activity indicator [anymore](http://www.futuretap.com/blog/fix-for-the-missing-network-activity-indicator-on-iphone-x). This framework brings it
-back by placing an activity indicator in the upper right of the screen on top of the
-regular status bar items on the following devices:
-
-- iPhone X
-- iPhone Xs
-- iPhone Xs Max
-- iPhone Xʀ
-- iPhone 11
-- iPhone 11 Pro
-- iPhone 11 Pro Max
-- iPhone 12
-- iPhone 12 mini
-- iPhone 12 Pro
-- iPhone 12 Pro Max
-- iPhone 13
-- iPhone 13 mini
-- iPhone 13 Pro
-- iPhone 13 Pro Max
-- iPhone 14
-- iPhone 14 Plus
-- iPhone 14 Pro
-- iPhone 14 Pro Max
-- iPhone 15
-- iPhone 15 Plus
-- iPhone 15 Pro
-- iPhone 15 Pro Max
-- iPhone 16
-- iPhone 16 Plus
-- iPhone 16 Pro
-- iPhone 16 Pro Max
+Since iOS 18, network activity indicator is no longer displayed. iPhones with a notch or Dynamic Island 
+[never displayed it](http://www.futuretap.com/blog/fix-for-the-missing-network-activity-indicator-on-iphone-x).
+This framework brings it back by placing an activity indicator in the upper right of the screen on top of the
+regular status bar items (on top of the clock on iPhone SE running iOS 18+).
 
 Since a circular indicator wouldn't fit, a rectangular [KITT scanner](https://giphy.com/gifs/80s-nbc-knight-rider-Bo2WsocASVBm0)-like indicator with a gradient is shown. The indicator UI can be used standalone or as a "fix" for the iOS network activity indicator (using the existing API).
 
