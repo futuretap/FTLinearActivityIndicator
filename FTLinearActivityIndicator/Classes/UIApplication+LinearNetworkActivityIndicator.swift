@@ -109,11 +109,16 @@ extension UIApplication {
 						.iPhone16Plus: (96, 42),
 						.iPhone16Pro: (86, 38),
 						.iPhone16ProMax: (96, 42),
+						.iPhone16e: (84, 36),
+						.iPhone17: (84, 36),
+						.iPhone17Pro: (86, 38),
+						.iPhone17ProMax: (96, 42),
+						.iPhoneAir: (86, 38),
 						.iPhoneSE2: (177, 40),
 						.iPhoneSE3: (177, 40),
 					]
 					let modelName = UIDevice.current.ftModelName
-					let config = modelName.flatMap { layout[$0] } ?? (74, 44)
+					let config = modelName.flatMap { layout[$0] } ?? (84, 36)
 					
 					let x = indicatorWindow!.frame.width - config.0
 					let width = config.1
